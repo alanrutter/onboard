@@ -1,5 +1,29 @@
-<% @houses.each do |house| %>
+<article class="row">
+	
+	<section class="rooms">
+	
+		<% @houses.each do |house| %>
 
-	<%= house %>
+			<div class="room">
 
-<% end %>
+				<h2>
+					<%= link_to house.title, house_path(house.id) %>
+				</h2>
+ 				
+			</div>
+	
+		<% end %>
+
+	</section>
+
+</article>
+
+
+
+
+
+
+	
+
+  			
+ 		
