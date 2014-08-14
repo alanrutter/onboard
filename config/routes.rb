@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   get 'session/create'
 
   get 'session/new'
@@ -13,5 +15,7 @@ Rails.application.routes.draw do
 	resources :users do 
 		resource :session
 	end
+
+	resources :session
 
 end
