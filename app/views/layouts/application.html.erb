@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<header> 
+	<nav>
+		<%= link_to "Onboard", root_path %>
+		<%= link_to "Login", "#" %>
+		<%= link_to "Sign up", "#" %>
+		<%= link_to "Log out", "#" %>
+		<%= link_to "Add a House", new_house_path %>
+	</nav>
+</header>
+
 <%= yield %>
 
 </body>
