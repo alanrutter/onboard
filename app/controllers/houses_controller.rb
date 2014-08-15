@@ -20,9 +20,20 @@ class HousesController < ApplicationController
   end
 
   def edit
+    @house = House.find(params[:id])
   end
 
   def update
+    @house = House.find(params[:id])
+    
+    if @house.update(house_params)
+      flash[:success] = "House successfully update"
+      redirect_to house_path
+    else
+      flash[:error] = "Something went wrong! House not updated, please try again"
+      render :edit
+    end
+  
   end
 
   def destroy
@@ -30,7 +41,7 @@ class HousesController < ApplicationController
 
   private
   def house_params 
-    params.require(:house).permit(:title, :address, :description, :price_in_pence, :number_of_rooms, :max_guests)
+    params.require(:house).permit(:title, :address, :description, :price_in_pence, :number_of_rooms, :max_guests, :image)
   end
 
 end
