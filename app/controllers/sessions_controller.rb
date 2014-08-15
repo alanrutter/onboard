@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   	@user = User.find_by_username(@username)
   	
   	if @user.present? and @user.authenticate(@password)
- 			session[:user_id] = 1
+ 			session[:user_id] = @user.id
   		redirect_to root_path
   	else
   		flash[:error] = "Oops! Try again…"

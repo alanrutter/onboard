@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 			redirect_to root_path
 		else
 			flash[:error] = "Something went wrong! Please try again"
-			render: new
+			render :new
 		end
 
 	end
@@ -32,7 +32,8 @@ class UsersController < ApplicationController
       flash[:error] = "Something went wrong! User not updated, please try again"
       render :edit
     end
-
+  end
+  
 private
 	
 	def user_params

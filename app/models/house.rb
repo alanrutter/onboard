@@ -6,4 +6,9 @@ class House < ActiveRecord::Base
 	has_many :orders
 	belongs_to :user
 
+	geocoded_by :address
+	before_validation :geocode
+
+	validates :latitude, presence: true
+	validates :longitude, presence: true
 end
