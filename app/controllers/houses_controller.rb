@@ -11,24 +11,28 @@ class HousesController < ApplicationController
   def new
     # the house variable is a new empty instance of my House object
     require_user
-    @user = current_user
-    @house = House.new
+    @user = current_user  
+    @house = @user.houses.new
   end
 
   def create
     require_user
     @user = current_user
-    @house = @user.house.new(house_params)
+    @house = @user.houses.new(house_params)
     @house.save
     redirect_to house_path(@house)
   end
 
   def edit
-    @house = House.find(params[:id])
+    require_user
+    @user = current_user
+    @house = @user.houses.find(params[:id])
   end
 
   def update
-    @house = House.find(params[:id])
+    require_user
+    @user = current_user
+    @house = @user.houses.find(params[:id])
     
     if @house.update(house_params)
       flash[:success] = "House successfully update"
