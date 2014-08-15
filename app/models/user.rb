@@ -3,4 +3,7 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: true
 	validates :password, presence: true, confirmation: true, length: { minimum: 8 }
 	has_secure_password
+
+	has_many :orders
+	
 end

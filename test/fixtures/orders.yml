@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  stripe_user: MyString
-  user_id: MyString
-  room_id: MyString
+  stripe_token: MyString
+  userid: 1
+  room_id: 1
 
 two:
-  stripe_user: MyString
-  user_id: MyString
-  room_id: MyString
+  stripe_token: MyString
+  userid: 1
+  room_id: 1
