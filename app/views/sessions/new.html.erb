@@ -1,8 +1,8 @@
-<simple_form_for :session |f| %>
+<%= simple_form_for :session, url: session_path do |f| %>
 
-	<% f.input :username %>
-	<% f.input :password %>
+	<%= f.input :username %>
+	<%= f.input :password %>
 
-	<% f.button :submit %>
+	<%= f.button :submit %>
 
 <% end %>

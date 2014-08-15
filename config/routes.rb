@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
 	root "houses#index"
 
 	resources :houses
 
 	resources :users do 
-		resource :houses
+		# This resource depends on a user
+		resources :houses
 	end
 
-	resources :session
+	resource :session
 
 end
